@@ -22286,7 +22286,7 @@ var Home = function Home() {
   return _react2.default.createElement(
     'div',
     null,
-    'I\'m the home component'
+    'I\'m the reloaded home component'
   );
 };
 
