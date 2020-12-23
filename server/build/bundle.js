@@ -6870,7 +6870,7 @@ app.use(_express2.default.static('public'));
 
 app.get('/', function (req, res) {
   var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
-  var html = '\n    <html>\n      <head></head>\n      <body>\n        <div>' + content + '</div>\n        <script src="bundle.js"></script>\n      </body>\n    </html>\n  ';
+  var html = '\n    <html>\n      <head></head>\n      <body>\n        <div id="root">' + content + '</div>\n        <script src="bundle.js"></script>\n      </body>\n    </html>\n  ';
   res.send(html);
 });
 
@@ -22301,7 +22301,18 @@ var Home = function Home() {
   return _react2.default.createElement(
     'div',
     null,
-    'I\'m the reloaded home component'
+    _react2.default.createElement(
+      'div',
+      null,
+      'I\'m the reloaded home component'
+    ),
+    _react2.default.createElement(
+      'button',
+      { onClick: function onClick() {
+          console.log('This only works if client-side bundle replaced skeleton!');
+        } },
+      'Press me!'
+    )
   );
 };
 
